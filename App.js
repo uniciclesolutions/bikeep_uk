@@ -1,7 +1,7 @@
 import React from "react";
 import MapView from "react-native-maps";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./src/components/header_component/header";
+import Footer from "./src/components/footer_component/footer";
 
 export default class App extends React.Component {
   render() {

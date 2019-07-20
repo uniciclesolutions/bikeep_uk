@@ -6,30 +6,35 @@ export default StyleSheet.create({
 
     headerContainer:{
         width: unitWidth * 10,
-        height: unitWidth * 1.5,
-        backgroundColor: "#F8F9FA",
+        height: unitWidth * 2,
+        backgroundColor: "white",
         flexDirection: "row",
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
+        borderBottomWidth: 1,
+        borderBottomColor:'#D3D3D3'
     },
     circularContainer: {
         flexDirection: 'column',
-        justifyContent:'flex-end',
+        justifyContent:'center',
         alignItems: 'center',
         width: unitWidth * 2,
-        height: unitWidth * 1.5,
+        height: unitWidth * 2,
+        marginTop: unitHeight * 0.2
+
 
       },
       circularContainerRight: {
         flexDirection: 'column',
-        justifyContent:'flex-end',
+        justifyContent:'center',
         alignItems: 'center',
         width: unitWidth * 6,
-        height: unitWidth * 1.5,
+        height: unitWidth * 2,
+        marginTop: unitHeight * 0.2
       },
       text:{
-          fontSize: RFValue(20),
-          marginBottom: unitHeight * 0.15
+          fontSize: RFValue(15),
+          fontWeight: 'bold'
       }
 
   

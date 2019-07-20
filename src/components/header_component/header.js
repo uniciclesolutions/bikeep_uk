@@ -29,7 +29,7 @@ const Header = props => {
   return (
     <View style={styles.headerContainer}>
       <TouchableOpacity onPress={()=>props.navigation.goBack()} style={styles.circularContainer}>
-        <Ionicons name="ios-arrow-round-back" size={64} />
+        <Ionicons name="ios-arrow-round-back" size={32} />
       </TouchableOpacity>
       <View style={styles.circularContainerRight}>
         <Text style={styles.text}>{props.title}</Text>

@@ -13,7 +13,7 @@ export default class InfoScreen extends React.Component {
 
         return (
           <View style={styles.container}>
-            <Header navigation={this.props.navigation} title={'INFO'}></Header>
+            <Header navigation={this.props.navigation} title={'Info'}></Header>
             <View style={styles.profileContainer}>
  
             </View>

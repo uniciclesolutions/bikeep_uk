@@ -28,7 +28,7 @@ animatedBox: {
   separatorView: {
     width: unitWidth * 10,
     height: 2,
-    backgroundColor: 'black'
+    backgroundColor: '#D3D3D3'
 
   },
 

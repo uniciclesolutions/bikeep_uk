@@ -37,7 +37,7 @@ animatedBox: {
   separatorView: {
     width: unitWidth * 6.5,
     height: 2,
-    backgroundColor: 'black'
+    backgroundColor: '#D3D3D3'
 
   },
   circularContainer: {

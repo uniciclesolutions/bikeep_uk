@@ -33,7 +33,7 @@ export default StyleSheet.create({
   },
   separatorView: {
     width: unitWidth * 6.5,
-    height: 1,
+    height: 0.5,
     backgroundColor: "#D3D3D3"
   },
   circularContainer: {

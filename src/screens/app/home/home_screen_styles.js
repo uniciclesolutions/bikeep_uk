@@ -9,6 +9,10 @@ container:{
     height: unitHeight * 10,
     width: unitWidth * 10
 },
+map:{
+  ...StyleSheet.absoluteFillObject,
+  
+},
 animatedBox: {
     flex: 1,
     backgroundColor: "white",

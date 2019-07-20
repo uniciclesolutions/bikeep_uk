@@ -36,7 +36,6 @@ export default StyleSheet.create({
         width: unitWidth * 1.5,
         height: unitWidth * 1.5,
         borderRadius: unitWidth * 0.75,
-        backgroundColor: 'black',
         marginLeft: unitWidth * 0.5,
         marginTop: unitWidth * 0.75,
 
@@ -46,7 +45,6 @@ export default StyleSheet.create({
         width: unitWidth * 1.5,
         height: unitWidth * 1.5,
         borderRadius: unitWidth * 0.75,
-        backgroundColor: 'black',
         marginRight: unitWidth * 0.5,
         marginTop: unitWidth * 0.75,
 

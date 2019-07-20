@@ -83,10 +83,9 @@ export default class HomeScreen extends React.Component {
               overlay={true}
               opacity={0.4}
             >
-        <MapView style={{ height: unitHeight *10 }} >
+        <MapView style={styles.map} />
         <Header onPress={this.toggleOpen} />
 
-        </MapView>
             </MenuDrawer>
           </View>
         );

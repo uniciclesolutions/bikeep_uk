@@ -1,5 +1,6 @@
 import React from "react";
 
+import * as Expo from 'expo'
 import MapView from "react-native-maps";
 import Header from "../../../components/header_component/header";
 import Footer from "../../../components/footer_component/footer";
@@ -15,9 +16,33 @@ export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          open: false
+          open: false,
+          mapRegion: { latitude: 52.639531, longitude: -1.141558, latitudeDelta: 0.0322, longitudeDelta: 0.0121 },
+          locationResult: null,
+          location: {coords: { latitude: 52.639531, longitude: -1.141558}},
         };
       }
+
+      componentDidMount() {
+        this._getLocationAsync();
+      }
+    
+      _handleMapRegionChange = mapRegion => {
+        this.setState({ mapRegion });
+      };
+
+      _getLocationAsync = async () => {
+        let { status } = await Expo.Permissions.askAsync(Expo.Permissions.LOCATION);
+        if (status !== 'granted') {
+          this.setState({
+            locationResult: 'Permission to access location was denied',
+            location,
+          });
+        }
+        let location = await Expo.Location.getCurrentPositionAsync({
+          enableHighAccuracy: true,
+        });        this.setState({ locationResult: JSON.stringify(location), location, });
+      };
     
       toggleOpen = () => {
         this.setState({ open: !this.state.open });
@@ -83,7 +108,17 @@ export default class HomeScreen extends React.Component {
               overlay={true}
               opacity={0.4}
             >
-        <MapView style={styles.map} />
+          <MapView 
+          style={styles.map} 
+          region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0322, longitudeDelta: 0.0121 }}
+          onRegionChange={this._handleMapRegionChange}>
+            <MapView.Marker
+              coordinate={this.state.location.coords}
+              title="My Marker"
+              description="Some description"
+            />
+          </MapView>
+
         <Header onPress={this.toggleOpen} />
 
             </MenuDrawer>

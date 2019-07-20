@@ -5,10 +5,11 @@ import MapView from "react-native-maps";
 import Header from "../../../components/header_component/header";
 import Footer from "../../../components/footer_component/footer";
 import MenuDrawer from 'react-native-side-drawer'
-import {View, TouchableOpacity, Text, Image} from 'react-native'
+import {View, TouchableOpacity, Text, Image, Button} from 'react-native'
 import styles from './home_screen_styles'
 import routes from '../../../router/routes'
 import {unitHeight, unitWidth} from "../../../constants/dimensions"
+import { Ionicons } from "@expo/vector-icons";
 
 
 export default class HomeScreen extends React.Component {
@@ -27,8 +28,8 @@ export default class HomeScreen extends React.Component {
         this._getLocationAsync();
       }
     
-      _handleMapRegionChange = mapRegion => {
-        this.setState({ mapRegion });
+      _handleMapRegionChange = location => {
+        this.setState({ location });
       };
 
       _getLocationAsync = async () => {
@@ -108,19 +109,19 @@ export default class HomeScreen extends React.Component {
               overlay={true}
               opacity={0.4}
             >
-          <MapView 
-          style={styles.map} 
-          region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0322, longitudeDelta: 0.0121 }}
-          onRegionChange={this._handleMapRegionChange}>
-            <MapView.Marker
-              coordinate={this.state.location.coords}
-              title="My Marker"
-              description="Some description"
-            />
-          </MapView>
+              <MapView 
+              zoomEnabled
+              scrollEnabled
+              showsMyLocationButton
+              showsUserLocation
+              style={styles.map} 
+              region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0322, longitudeDelta: 0.0121 }}
+              />
 
-        <Header onPress={this.toggleOpen} />
-
+              <Header onPress={this.toggleOpen} />
+              <TouchableOpacity style={styles.button}  onPress={()=>this._handleMapRegionChange(this.state.location)}>
+              <Ionicons name="md-locate" size={32} />
+              </TouchableOpacity>
             </MenuDrawer>
           </View>
         );

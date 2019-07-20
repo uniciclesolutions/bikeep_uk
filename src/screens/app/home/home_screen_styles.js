@@ -55,6 +55,18 @@ animatedBox: {
     marginRight:1
 
   },
+  button: {
+    width: unitWidth * 1.5,
+    height: unitWidth * 1.5,
+    borderRadius: unitWidth * 0.75,
+    backgroundColor: 'white',
+    marginLeft:unitWidth * 8,
+    marginTop: unitHeight * 7,
+    flexDirection: 'column',
+    justifyContent:'center',
+    alignItems: 'center',
+
+  },
   infoContainer: {
     flexDirection: 'column',
     justifyContent:'flex-start',

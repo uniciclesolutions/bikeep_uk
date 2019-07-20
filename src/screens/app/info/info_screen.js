@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "../../../components/header_component/header";
-import {View,TouchableOpacity, Text, Switch, Image, Linking} from 'react-native'
+import {View,TouchableOpacity, Text, Switch, Image, Linking, Platform} from 'react-native'
 import styles from './info_screen_styles'
 import routes from '../../../router/routes'
 
@@ -10,6 +10,9 @@ export default class InfoScreen extends React.Component {
 
     
       render() {
+
+        const url = Platform.OS === 'ios' ? 'telprompt:+34256679992' : 'tel:+34256679992'
+
 
         return (
           <View style={styles.container}>
@@ -25,9 +28,9 @@ export default class InfoScreen extends React.Component {
             </TouchableOpacity>
             <View style={styles.separatorView}/>
 
-            <View style={styles.optionItem}>
+            <TouchableOpacity onPress={() => Linking.openURL(url) } style={styles.optionItem}>
               <Text style={styles.itemText}>+37 256679992</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.separatorView}/>
 
             <TouchableOpacity onPress={()=> Linking.openURL('https://www.bikeep.com')} style={styles.optionItem}>

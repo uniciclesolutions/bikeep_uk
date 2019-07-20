@@ -1,15 +1,15 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Share } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {unitHeight, unitWidth} from "../../constants/dimensions"
-import styles from './home_header_styles'
+import { unitHeight, unitWidth } from "../../constants/dimensions";
+import styles from "./home_header_styles";
 
 const Header = props => {
   onShare = async () => {
     try {
       const result = await Share.share({
         message:
-          'You have been invited to Bikeep. With Bikeep you can now use our smart racks to lock your bike wherever you go. You can download the app clicking the following link: http://www.google.com',
+          "You have been invited to Bikeep. With Bikeep you can now use our smart racks to lock your bike wherever you go. You can download the app clicking the following link: http://www.google.com"
       });
 
       if (result.action === Share.sharedAction) {
@@ -30,21 +30,24 @@ const Header = props => {
     <View style={styles.headerContainer}>
       <View style={styles.circularContainer}>
         <TouchableOpacity style={styles.circularPic} onPress={props.onPress}>
-				<Image
-        style={styles.circularPicImage}
-					resizeMode="cover"
-          source={require('../../../assets/bikeep.png')}
-					></Image>
-          </TouchableOpacity>
+          <Image
+            style={styles.circularPicImage}
+            resizeMode="cover"
+            source={require("../../../assets/bikeep.png")}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.circularContainerRight}>
-        <TouchableOpacity style={styles.circularPicRight} onPress={()=>this.onShare()}>
-				<Image
-        style={styles.circularPicImage}
-					resizeMode="cover"
-          source={require('../../../assets/share.png')}
-					></Image>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.circularPicRight}
+          onPress={() => this.onShare()}
+        >
+          <Image
+            style={styles.circularPicImage}
+            resizeMode="cover"
+            source={require("../../../assets/share.png")}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

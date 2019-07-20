@@ -1,15 +1,15 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Share } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {unitHeight, unitWidth} from "../../constants/dimensions"
-import styles from './header_styles'
+import { unitHeight, unitWidth } from "../../constants/dimensions";
+import styles from "./header_styles";
 
 const Header = props => {
   onShare = async () => {
     try {
       const result = await Share.share({
         message:
-          'You have been invited to Bikeep. With Bikeep you can now use our smart racks to lock your bike wherever you go. You can download the app clicking the following link: http://www.google.com',
+          "You have been invited to Bikeep. With Bikeep you can now use our smart racks to lock your bike wherever you go. You can download the app clicking the following link: http://www.google.com"
       });
 
       if (result.action === Share.sharedAction) {
@@ -28,7 +28,10 @@ const Header = props => {
 
   return (
     <View style={styles.headerContainer}>
-      <TouchableOpacity onPress={()=>props.navigation.goBack()} style={styles.circularContainer}>
+      <TouchableOpacity
+        onPress={() => props.navigation.goBack()}
+        style={styles.circularContainer}
+      >
         <Ionicons name="ios-arrow-round-back" size={32} />
       </TouchableOpacity>
       <View style={styles.circularContainerRight}>
@@ -36,8 +39,8 @@ const Header = props => {
       </View>
 
       <TouchableOpacity style={styles.circularContainer}>
-
-</TouchableOpacity>
+        <Ionicons name="ios-arrow-round-back" size={32} color={"white"} />
+      </TouchableOpacity>
     </View>
   );
 };

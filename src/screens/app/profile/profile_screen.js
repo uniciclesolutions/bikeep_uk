@@ -14,6 +14,7 @@ export default class ProfileScreen extends React.Component {
       render() {
         return (
           <View style={styles.container}>
+            <Header navigation={this.props.navigation} title={'PROFILE'}></Header>
             <View style={styles.profileContainer}>
             <Image
 					    style={styles.circularPic}

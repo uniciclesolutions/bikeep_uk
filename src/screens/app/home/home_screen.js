@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Expo from 'expo'
 import MapView from "react-native-maps";
-import Header from "../../../components/header_component/header";
+import Header from "../../../components/home_header_component/home_header";
 import Footer from "../../../components/footer_component/footer";
 import MenuDrawer from 'react-native-side-drawer'
 import {View, TouchableOpacity, Text, Image, Button} from 'react-native'

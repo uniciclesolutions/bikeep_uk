@@ -4,8 +4,11 @@ import MapView from "react-native-maps";
 import Header from "../../../components/header_component/header";
 import Footer from "../../../components/footer_component/footer";
 import MenuDrawer from 'react-native-side-drawer'
-import {View,TouchableOpacity, Text} from 'react-native'
+import {View, TouchableOpacity, Text, Image} from 'react-native'
 import styles from './home_screen_styles'
+import routes from '../../../router/routes'
+import {unitHeight, unitWidth} from "../../../constants/dimensions"
+
 
 export default class HomeScreen extends React.Component {
 
@@ -25,18 +28,22 @@ export default class HomeScreen extends React.Component {
           <View style={styles.animatedBox}>
               <View style={styles.profileContainer}>
                 <View style={styles.circularContainer}>
-                    <View style={styles.circularPic}/>
+					<Image
+					    style={styles.circularPic}
+					    resizeMode="cover"
+                        source={require('../../../../assets/bikeep.png')}
+					    />
                 </View>
 
                 <View style={styles.infoContainer}>
-                    <Text style={styles.itemText}>Enric Camacho</Text>
-                    <Text style={styles.itemText}>Barcelona</Text>
+                    <Text style={styles.itemTitle}>Enric Camacho</Text>
+                    <Text style={styles.itemTitle}>Barcelona</Text>
                 </View>
               </View>
 
-              <View style={styles.optionItem}>
+              <TouchableOpacity onPress={()=>this.props.navigation.navigate(routes.profile())} style={styles.optionItem}>
               <Text style={styles.itemText}>Profile</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.separatorView}></View>
               <View style={styles.optionItem}>
               <Text style={styles.itemText}>History</Text>
@@ -56,6 +63,11 @@ export default class HomeScreen extends React.Component {
               <View style={styles.optionItem}>
               <Text style={styles.itemText}>Info</Text>
               </View>
+              <View style={styles.separatorView}></View>
+
+              <TouchableOpacity onPress={()=>this.toggleOpen()} style={styles.optionItem}>
+              <Text style={styles.itemText}>Close Menu</Text>
+              </TouchableOpacity>
           </View>
         );
       };
@@ -71,12 +83,10 @@ export default class HomeScreen extends React.Component {
               overlay={true}
               opacity={0.4}
             >
-        <Header />
-        <TouchableOpacity onPress={this.toggleOpen}>
-            <Text style={styles.itemText}>Open Menu Madafakkkkkkka</Text>
-        </TouchableOpacity>
-        <MapView style={{ flex: 1 }} />
-        <Footer />
+        <MapView style={{ height: unitHeight *10 }} >
+        <Header onPress={this.toggleOpen} />
+
+        </MapView>
             </MenuDrawer>
           </View>
         );

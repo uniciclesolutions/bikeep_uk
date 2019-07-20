@@ -16,41 +16,22 @@ animatedBox: {
     justifyContent:'flex-start',
     alignItems: 'flex-start'
   },
-  body: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#F04812'
-  },
+
   optionItem: {
     flexDirection: 'row',
     alignItems:  'center',
     justifyContent:'flex-start',
-    width: unitWidth * 6.5,
+    width: unitWidth * 10,
     height: unitHeight * 0.8,
 
   },
   separatorView: {
-    width: unitWidth * 6.5,
+    width: unitWidth * 10,
     height: 2,
     backgroundColor: 'black'
 
   },
-  circularContainer: {
-    flexDirection: 'column',
-    justifyContent:'flex-start',
-    alignItems: 'center',
-    width: unitWidth * 2.5,
-    height: unitHeight * 2,
-  },
-  circularPic: {
-    width: unitWidth * 1.5,
-    height: unitWidth * 1.5,
-    borderRadius: unitWidth * 0.75,
-    backgroundColor: 'black',
-    marginRight:1
 
-  },
   infoContainer: {
     flexDirection: 'column',
     justifyContent:'flex-start',
@@ -62,18 +43,25 @@ animatedBox: {
   },
   profileContainer: {
     flexDirection: 'row',
-    justifyContent:'flex-start',
-    alignItems: 'flex-start',
-    width: unitWidth * 6.5,
-    height: unitHeight * 2,
-    marginTop: unitHeight * 1
+    justifyContent:'center',
+    alignItems: 'center',
+    width: unitWidth * 10,
+    height: unitHeight * 4,
+
+  },
+  circularPic: {
+    width: unitWidth * 3,
+    height: unitWidth * 3,
+    borderRadius: unitWidth * 1.5,
+    backgroundColor: 'black',
 
   },
   itemText:{
-    fontSize: RFValue(20),
-    marginLeft: unitWidth * 0.5
-},
-itemTitle:{
-    fontSize: RFValue(20),
-},
+      fontSize: RFValue(20),
+      marginLeft: unitWidth * 0.5
+  },
+  switch:{
+    position: 'absolute',
+    right: unitWidth * 0.5
+  }
 })

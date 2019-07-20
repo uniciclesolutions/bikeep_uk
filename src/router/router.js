@@ -1,7 +1,9 @@
 
-  import HomeScreen from '../screens/app/home/home_screen'
   import { createStackNavigator, createAppContainer } from 'react-navigation'
   import routes from './routes'
+  import HomeScreen from '../screens/app/home/home_screen'
+  import ProfileScreen from '../screens/app/profile/profile_screen'
+
   
   const Stacks = {
 	Auth: 'auth',
@@ -22,6 +24,8 @@ const AuthStack = createStackNavigator(
 const AppStack = createStackNavigator(
 	{
 		[routes.home()]: HomeScreen,
+		[routes.profile()]: ProfileScreen,
+
 		
 	},
 	{

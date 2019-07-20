@@ -6,6 +6,7 @@ const routes = {
 	// App Routes
 	
 	home,
+	profile
 
 
 }
@@ -17,6 +18,10 @@ const routes = {
 
 function home() {
 	return 'home'
+}
+
+function profile() {
+	return 'profile'
 }
 
 

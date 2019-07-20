@@ -71,24 +71,24 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.itemText}>Profile</Text>
               </TouchableOpacity>
               <View style={styles.separatorView}></View>
-              <View style={styles.optionItem}>
+              <TouchableOpacity style={styles.optionItem}>
               <Text style={styles.itemText}>History</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.separatorView}></View>
 
-              <View style={styles.optionItem}>
+              <TouchableOpacity style={styles.optionItem}>
               <Text style={styles.itemText}>Fix your bike</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.separatorView}></View>
 
-              <View style={styles.optionItem}>
+              <TouchableOpacity style={styles.optionItem}>
               <Text style={styles.itemText}>Buy & Sell</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.separatorView}></View>
 
-              <View style={styles.optionItem}>
+              <TouchableOpacity onPress={()=>this.props.navigation.navigate(routes.info())} style={styles.optionItem}>
               <Text style={styles.itemText}>Info</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.separatorView}></View>
 
               <TouchableOpacity onPress={()=>this.toggleOpen()} style={styles.optionItem}>

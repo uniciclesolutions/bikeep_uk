@@ -6,7 +6,8 @@ const routes = {
 	// App Routes
 	
 	home,
-	profile
+	profile,
+	info
 
 
 }
@@ -24,5 +25,8 @@ function profile() {
 	return 'profile'
 }
 
+function info() {
+	return 'info'
+}
 
 export default routes

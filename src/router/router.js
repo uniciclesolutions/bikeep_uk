@@ -3,6 +3,7 @@
   import routes from './routes'
   import HomeScreen from '../screens/app/home/home_screen'
   import ProfileScreen from '../screens/app/profile/profile_screen'
+  import InfoScreen from '../screens/app/info/info_screen'
 
   
   const Stacks = {
@@ -25,6 +26,8 @@ const AppStack = createStackNavigator(
 	{
 		[routes.home()]: HomeScreen,
 		[routes.profile()]: ProfileScreen,
+		[routes.info()]: InfoScreen,
+
 
 		
 	},

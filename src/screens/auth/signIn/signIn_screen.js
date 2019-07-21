@@ -49,7 +49,7 @@ export default class SignInScreen extends React.Component {
           <Text style={styles.subtitle}>
             We will send you an SMS message to validate your phone number
           </Text>
-          <Item rounded>
+          <Item>
             <Icon style={{ color: "white" }} active name="call" />
             {this.state.labelValue == "" && <Label>Phone Number</Label>}
             <Input

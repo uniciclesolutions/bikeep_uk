@@ -20,8 +20,8 @@ import {
   Label,
   Button
 } from "native-base";
-
 import routes from "../../../router/routes";
+import { useNavigation } from "react-navigation-hooks";
 
 const SignInScreen = props => {
   const [checked, setChecked] = useState(false);
@@ -33,6 +33,7 @@ const SignInScreen = props => {
       setChecked(false);
     }
   };
+  const { navigate } = useNavigation();
   return (
     <View style={styles.background}>
       <View style={styles.signInContainer}>
@@ -70,7 +71,9 @@ const SignInScreen = props => {
             style={{
               backgroundColor: "rgba(253,187,45,1) "
             }}
-            onPress={() => this.props.navigation.navigate(routes.home())}
+            onPress={() => {
+              navigate(routes.home());
+            }}
           >
             <Text> Continue </Text>
           </Button>

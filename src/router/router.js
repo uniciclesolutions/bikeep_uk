@@ -3,6 +3,7 @@ import routes from "./routes";
 import HomeScreen from "../screens/app/home/home_screen";
 import ProfileScreen from "../screens/app/profile/profile_screen";
 import InfoScreen from "../screens/app/info/info_screen";
+import SignInScreen from "../screens/auth/signIn/signIn_screen";
 
 const Stacks = {
   Auth: "auth",
@@ -11,11 +12,11 @@ const Stacks = {
 
 const AuthStack = createStackNavigator(
   {
-    [routes.home()]: HomeScreen
+    [routes.signIn()]: SignInScreen
   },
   {
     headerMode: "none",
-    initialRouteName: routes.home()
+    initialRouteName: routes.signIn()
   }
 );
 
@@ -31,7 +32,7 @@ const AppStack = createStackNavigator(
   }
 );
 
-const isUserLoggedIn = true;
+const isUserLoggedIn = false;
 
 const RootStack = createStackNavigator(
   {

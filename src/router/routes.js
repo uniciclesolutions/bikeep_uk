@@ -1,13 +1,16 @@
 const routes = {
   // Auth Routes
-
+  signIn,
   // App Routes
 
   home,
   profile,
   info
 };
-
+// Auth
+function signIn() {
+  return "signIn";
+}
 // App
 
 function home() {

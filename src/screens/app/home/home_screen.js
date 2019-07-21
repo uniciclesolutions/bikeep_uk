@@ -108,6 +108,12 @@ export default class HomeScreen extends React.Component {
         >
           <Text style={styles.itemText}>Close Menu</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate(routes.signIn())}
+          style={styles.optionItem}
+        >
+          <Text style={styles.itemText}>Sign Out</Text>
+        </TouchableOpacity>
         <View style={styles.separatorView} />
       </View>
     );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import MapView from "react-native-maps";
 import Header from "../../../components/header_component/header";
@@ -6,12 +6,30 @@ import Footer from "../../../components/footer_component/footer";
 import { View, TouchableOpacity, Text, Switch, Image } from "react-native";
 import styles from "./profile_screen_styles";
 import routes from "../../../router/routes";
+import { Ionicons } from "@expo/vector-icons";
+import BikeModal from './components/bike_modal/bike_modal_component'
+import { useNavigation } from "react-navigation-hooks";
 
-export default class ProfileScreen extends React.Component {
-  render() {
+const ProfileScreen = props => {
+
+    const [isOpen, setIsOpen] = useState(false)
+    const changeIsOpenValue = () => {
+      if(isOpen===true){
+        setIsOpen(false);
+
+      }else{
+        setIsOpen(true);
+      }
+         
+      
+    }
+
+    const hasBike = false;
+
     return (
+      <React.Fragment>
       <View style={styles.container}>
-        <Header navigation={this.props.navigation} title={"Profile"} />
+        <Header navigation={useNavigation} title={"Profile"} />
         <View style={styles.profileContainer}>
           <Image
             style={styles.circularPic}
@@ -41,7 +59,21 @@ export default class ProfileScreen extends React.Component {
           <Switch style={styles.switch} />
         </View>
         <View style={styles.separatorView} />
+
+        {hasBike ? null : (
+          <TouchableOpacity onPress={()=> changeIsOpenValue()} style={styles.optionItem}>
+            <Ionicons style={styles.itemText} name="ios-add" size={64} />
+
+            <Text style={styles.itemText}>Add a bike</Text>
+          </TouchableOpacity>
+        )}
+
+        {hasBike ? null : <View style={styles.separatorView} />}
       </View>
-    );
+      <BikeModal onClose={()=> changeIsOpenValue()} isOpen={isOpen}></BikeModal>
+
+      </React.Fragment>
+    )
   }
-}
+
+  export default ProfileScreen;

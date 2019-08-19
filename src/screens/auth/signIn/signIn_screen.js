@@ -59,7 +59,7 @@ const SignInScreen = props => {
           <TextInput
             placeholder={"Phone Number"}
             style={{ color: "white" }}
-            onChangeText={() => setInputValue(this)}
+            onChangeText={(number) => setInputValue(number)}
           />
         </Item>
         <View style={styles.agreeContainer}>

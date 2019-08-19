@@ -6,13 +6,13 @@ import {
   Text,
   Switch,
   Image,
+  TextInput,
   Linking,
   Platform
 } from "react-native";
 import {
   Container,
   Item,
-  Input,
   Icon,
   ListItem,
   CheckBox,
@@ -22,6 +22,7 @@ import {
 } from "native-base";
 import routes from "../../../router/routes";
 import { useNavigation } from "react-navigation-hooks";
+import { db } from '../../../config';
 
 const SignInScreen = props => {
   const [checked, setChecked] = useState(false);
@@ -34,6 +35,13 @@ const SignInScreen = props => {
     }
   };
   const { navigate } = useNavigation();
+
+  let addItem = item => {
+    db.ref('/Users').push({
+      phoneNumber: item
+    });
+  }
+
   return (
     <View style={styles.background}>
       <View style={styles.signInContainer}>
@@ -48,8 +56,8 @@ const SignInScreen = props => {
         </Text>
         <Item>
           <Icon style={{ color: "white" }} active name="call" />
-          {!inputValue && <Label>Phone Number</Label>}
-          <Input
+          <TextInput
+            placeholder={"Phone Number"}
             style={{ color: "white" }}
             onChangeText={() => setInputValue(this)}
           />
@@ -71,9 +79,9 @@ const SignInScreen = props => {
             style={{
               backgroundColor: "rgba(253,187,45,1) "
             }}
-            onPress={() => {
-              navigate(routes.home());
-            }}
+            onPress={() => 
+              addItem(inputValue)
+            }
           >
             <Text> Continue </Text>
           </Button>
@@ -84,3 +92,9 @@ const SignInScreen = props => {
 };
 
 export default SignInScreen;
+
+/*
+            onPress={() => {
+              navigate(routes.home());
+            }}
+            */

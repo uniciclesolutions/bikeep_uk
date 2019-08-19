@@ -39,7 +39,9 @@ const SignInScreen = props => {
   let addItem = item => {
     db.ref('/Users').push({
       phoneNumber: item
-    });
+    })
+    navigate(routes.home())
+
   }
 
   return (
@@ -93,8 +95,3 @@ const SignInScreen = props => {
 
 export default SignInScreen;
 
-/*
-            onPress={() => {
-              navigate(routes.home());
-            }}
-            */

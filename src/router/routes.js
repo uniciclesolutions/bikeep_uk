@@ -5,12 +5,15 @@ const routes = {
 
   home,
   profile,
-  info
+  info,
+
 };
 // Auth
 function signIn() {
   return "signIn";
 }
+
+
 // App
 
 function home() {

@@ -12,7 +12,8 @@ const Stacks = {
 
 const AuthStack = createStackNavigator(
   {
-    [routes.signIn()]: SignInScreen
+    [routes.signIn()]: SignInScreen,
+
   },
   {
     headerMode: "none",

@@ -29,7 +29,7 @@ const ProfileScreen = props => {
     return (
       <React.Fragment>
       <View style={styles.container}>
-        <Header navigation={useNavigation} title={"Profile"} />
+        <Header navigation={useNavigation()} title={"Profile"} />
         <View style={styles.profileContainer}>
           <Image
             style={styles.circularPic}

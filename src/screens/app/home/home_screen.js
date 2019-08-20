@@ -55,6 +55,7 @@ export default class HomeScreen extends React.Component {
 
   drawerContent = () => {
     return (
+      <View style={styles.fullView}>
       <View style={styles.animatedBox}>
         <View style={styles.profileContainer}>
           <View style={styles.circularContainer}>
@@ -102,12 +103,7 @@ export default class HomeScreen extends React.Component {
         </TouchableOpacity>
         <View style={styles.separatorView} />
 
-        <TouchableOpacity
-          onPress={() => this.toggleOpen()}
-          style={styles.optionItem}
-        >
-          <Text style={styles.itemText}>Close Menu</Text>
-        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate(routes.signIn())}
           style={styles.optionItem}
@@ -115,6 +111,8 @@ export default class HomeScreen extends React.Component {
           <Text style={styles.itemText}>Sign Out</Text>
         </TouchableOpacity>
         <View style={styles.separatorView} />
+      </View>
+      <TouchableOpacity onPress={() => this.toggleOpen()} style={styles.transparentBox}/>
       </View>
     );
   };
@@ -125,7 +123,7 @@ export default class HomeScreen extends React.Component {
         <MenuDrawer
           open={this.state.open}
           drawerContent={this.drawerContent()}
-          drawerPercentage={65}
+          drawerPercentage={100}
           animationTime={250}
           overlay={true}
           opacity={0.4}

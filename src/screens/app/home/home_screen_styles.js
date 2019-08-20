@@ -11,12 +11,27 @@ export default StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject
   },
+  fullView:{
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent:'flex-start',
+    height: unitHeight*10,
+    width:unitWidth*10
+  },
   animatedBox: {
-    flex: 1,
     backgroundColor: "white",
     flexDirection: "column",
     justifyContent: "flex-start",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    width: unitWidth*6.5,
+    height:unitHeight*10
+  },
+  transparentBox: {
+    flex: 1,
+    backgroundColor: "transparent",
+    width: unitWidth*3.5,
+    height:unitHeight*10
+
   },
   body: {
     flex: 1,

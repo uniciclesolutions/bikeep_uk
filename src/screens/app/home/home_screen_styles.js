@@ -100,6 +100,10 @@ export default StyleSheet.create({
     color: "#D3D3D3",
     marginLeft: unitWidth * 0.5
   },
+  icon:{
+    marginLeft: unitWidth * 0.5
+
+  },
   itemTitle: {
     fontSize: RFValue(20)
   }

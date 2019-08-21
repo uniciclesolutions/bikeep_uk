@@ -44,7 +44,15 @@ export default class InfoScreen extends React.Component {
           onPress={() => Linking.openURL("https://www.bikeep.com")}
           style={styles.optionItem}
         >
-          <Text style={styles.itemText}>https://www.bikeep.com</Text>
+          <Text style={styles.itemText}>Bikeep.com</Text>
+        </TouchableOpacity>
+        <View style={styles.separatorView} />
+
+        <TouchableOpacity
+          onPress={() => Linking.openURL("https://www.unicycle.solutions")}
+          style={styles.optionItem}
+        >
+          <Text style={styles.itemText}>Uni Cycle Solutions</Text>
         </TouchableOpacity>
         <View style={styles.separatorView} />
 
@@ -56,10 +64,7 @@ export default class InfoScreen extends React.Component {
         </TouchableOpacity>
         <View style={styles.separatorView} />
 
-        <View style={styles.optionItem}>
-          <Text style={styles.itemText}>Google Maps Legal Notices</Text>
-        </View>
-        <View style={styles.separatorView} />
+
       </View>
     );
   }

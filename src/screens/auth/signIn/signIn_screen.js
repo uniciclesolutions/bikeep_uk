@@ -32,9 +32,9 @@ const SignInScreen = props => {
 
   let addItem = item => {
     if (!isNaN(inputValue) && inputValue.length === 9 && checked) {
-      db.ref('/Users').push({
+     /* db.ref('/Users').push({
         phoneNumber: '+34' + item
-      })
+      })*/
       setCodeIsSent(true)
     }
 

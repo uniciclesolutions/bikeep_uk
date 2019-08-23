@@ -43,7 +43,7 @@ const RootStack = createStackNavigator(
   {
     headerMode: "none",
     // initialRouteName: Stacks.Auth
-    initialRouteName: isUserLoggedIn ? Stacks.App : Stacks.App
+    initialRouteName: isUserLoggedIn ? Stacks.App : Stacks.Auth
   }
 );
 

@@ -12,7 +12,8 @@ const Stacks = {
 
 const AuthStack = createStackNavigator(
   {
-    [routes.signIn()]: SignInScreen
+    [routes.signIn()]: SignInScreen,
+
   },
   {
     headerMode: "none",
@@ -42,7 +43,7 @@ const RootStack = createStackNavigator(
   {
     headerMode: "none",
     // initialRouteName: Stacks.Auth
-    initialRouteName: isUserLoggedIn ? Stacks.App : Stacks.Auth
+    initialRouteName: isUserLoggedIn ? Stacks.App : Stacks.App
   }
 );
 

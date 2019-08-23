@@ -9,7 +9,7 @@ import { View, TouchableOpacity, Text, Image, Button } from "react-native";
 import styles from "./home_screen_styles";
 import routes from "../../../router/routes";
 import { unitHeight, unitWidth } from "../../../constants/dimensions";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons , Entypo, Feather} from "@expo/vector-icons";
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -55,66 +55,83 @@ export default class HomeScreen extends React.Component {
 
   drawerContent = () => {
     return (
-      <View style={styles.animatedBox}>
-        <View style={styles.profileContainer}>
-          <View style={styles.circularContainer}>
-            <Image
-              style={styles.circularPic}
-              resizeMode="cover"
-              source={require("../../../../assets/bikeep.png")}
-            />
-          </View>
+      <View style={styles.fullView}>
+        <View style={styles.animatedBox}>
+          <View style={styles.profileContainer}>
+            <View style={styles.circularContainer}>
+              <Image
+                style={styles.circularPic}
+                resizeMode="cover"
+                source={require("../../../../assets/bikeep.png")}
+              />
+            </View>
 
-          <View style={styles.infoContainer}>
-            <Text style={styles.itemTitle}>Enric Camacho</Text>
-            <Text style={styles.itemTitle}>Barcelona</Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.itemTitle}>Enric Camacho</Text>
+              <Text style={styles.itemTitle}>Barcelona</Text>
+            </View>
           </View>
+          <View style={styles.separatorView} />
+
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(routes.profile())}
+            style={styles.optionItem}
+          >
+            <Ionicons style={styles.icon} name="ios-person" size={20} />
+            <Text style={styles.itemText}>Profile</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+          <TouchableOpacity style={styles.optionItem}>
+          <Ionicons style={styles.icon} name="ios-clock" size={20} color={'#D3D3D3'} />
+            <Text style={styles.itemTextLocked}>History</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+          <TouchableOpacity style={styles.optionItem}>
+          <Ionicons style={styles.icon} name="ios-construct" size={20} color={'#D3D3D3'} />
+            <Text style={styles.itemTextLocked}>Fix your bike</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+          <TouchableOpacity style={styles.optionItem}>
+          <Ionicons style={styles.icon} name="ios-bicycle" size={20} color={'#D3D3D3'} />
+            <Text style={styles.itemTextLocked}>Rent a bike</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+          <TouchableOpacity style={styles.optionItem}>
+          <Ionicons style={styles.icon} name="ios-pricetags" size={20} color={'#D3D3D3'} />
+            <Text style={styles.itemTextLocked}>Buy & Sell</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+          <TouchableOpacity style={styles.optionItem}>
+          <Ionicons style={styles.icon} name="ios-lock" size={20} color={'#D3D3D3'} />
+            <Text style={styles.itemTextLocked}>Store your bike</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(routes.info())}
+            style={styles.optionItem}
+          >
+            <Ionicons style={styles.icon} name="ios-information-circle-outline" size={20} />
+            <Text style={styles.itemText}>Info</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
+
+
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(routes.signIn())}
+            style={styles.optionItem}
+          >
+            <Ionicons style={styles.icon} name="ios-log-out" size={20} />
+            <Text style={styles.itemText}>Sign Out</Text>
+          </TouchableOpacity>
+          <View style={styles.separatorView} />
         </View>
-        <View style={styles.separatorView} />
-
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate(routes.profile())}
-          style={styles.optionItem}
-        >
-          <Text style={styles.itemText}>Profile</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
-        <TouchableOpacity style={styles.optionItem}>
-          <Text style={styles.itemTextLocked}>History</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
-
-        <TouchableOpacity style={styles.optionItem}>
-          <Text style={styles.itemTextLocked}>Fix your bike</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
-
-        <TouchableOpacity style={styles.optionItem}>
-          <Text style={styles.itemTextLocked}>Buy & Sell</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
-
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate(routes.info())}
-          style={styles.optionItem}
-        >
-          <Text style={styles.itemText}>Info</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
-
-        <TouchableOpacity
-          onPress={() => this.toggleOpen()}
-          style={styles.optionItem}
-        >
-          <Text style={styles.itemText}>Close Menu</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate(routes.signIn())}
-          style={styles.optionItem}
-        >
-          <Text style={styles.itemText}>Sign Out</Text>
-        </TouchableOpacity>
-        <View style={styles.separatorView} />
+        <TouchableOpacity onPress={() => this.toggleOpen()} style={styles.transparentBox} />
       </View>
     );
   };
@@ -125,7 +142,7 @@ export default class HomeScreen extends React.Component {
         <MenuDrawer
           open={this.state.open}
           drawerContent={this.drawerContent()}
-          drawerPercentage={65}
+          drawerPercentage={100}
           animationTime={250}
           overlay={true}
           opacity={0.4}
@@ -157,7 +174,7 @@ export default class HomeScreen extends React.Component {
   }
 }
 
-/*       
+/*
 <Header />
         <MapView style={{ flex: 1 }} />
         <Footer />

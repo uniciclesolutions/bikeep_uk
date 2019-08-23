@@ -1,7 +1,6 @@
 import React from "react";
 import _ from "lodash";
 import RootStack from "./src/router/router";
-
 import { StyleSheet, View } from "react-native";
 
 class App extends React.Component {

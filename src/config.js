@@ -9,4 +9,4 @@ let config = {
     appId: "1:158049798842:web:b4e2ead6be0c4267"
 };
 let app = Firebase.initializeApp(config);
-export const db = app.database();
+export const db = app;

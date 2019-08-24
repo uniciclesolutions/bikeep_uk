@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./signIn_screen_styles";
 import {
   View,
@@ -16,11 +16,12 @@ import {
 import routes from "../../../router/routes";
 import { useNavigation } from "react-navigation-hooks";
 import { db } from '../../../config';
+import Firebase from 'firebase';
 
 const SignInScreen = props => {
   const [checked, setChecked] = useState(false);
   const [codeIsSent, setCodeIsSent] = useState(false);
-  const [inputValue, setInputValue] = useState(undefined);
+  const [inputValue, setInputValue] = useState('669543142');
   const changeCheckValue = () => {
     if (!checked) {
       setChecked(true);
@@ -30,12 +31,26 @@ const SignInScreen = props => {
   };
   const { navigate } = useNavigation();
 
+
+  
   let addItem = item => {
+    window.recaptchaVerifier = new Firebase.auth.RecaptchaVerifier('sign-in-button', {
+      'size': 'invisible',
+      'callback': function(response) {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignInSubmit();
+      }
+    });
+    var appVerifier = window.recaptchaVerifier;
+
+
     if (!isNaN(inputValue) && inputValue.length === 9 && checked) {
      /* db.database().ref('/Users').push({
         phoneNumber: '+34' + item
       })*/
-      setCodeIsSent(true)
+      db.auth().signInWithPhoneNumber('+34'+ item, appVerifier)
+      .then(()=> setCodeIsSent(true))
+
     }
 
   }

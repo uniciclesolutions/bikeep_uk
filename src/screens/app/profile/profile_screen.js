@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import MapView from "react-native-maps";
 import Header from "../../../components/header_component/header";
 import Footer from "../../../components/footer_component/footer";
-import { View, TouchableOpacity, Text, Switch, Image } from "react-native";
+import { View, TouchableOpacity, Text, Switch, Image, Icon } from "react-native";
 import styles from "./profile_screen_styles";
 import routes from "../../../router/routes";
-import { Ionicons } from "@expo/vector-icons";
 import BikeModal from './components/bike_modal/bike_modal_component'
 import { useNavigation } from "react-navigation-hooks";
 
@@ -62,7 +61,7 @@ const ProfileScreen = props => {
 
         {hasBike ? null : (
           <TouchableOpacity onPress={()=> changeIsOpenValue()} style={styles.optionItem}>
-            <Ionicons style={styles.itemText} name="ios-add" size={64} />
+            <Icon style={styles.itemText} name="ios-add" size={64} />
 
             <Text style={styles.itemText}>Add a bike</Text>
           </TouchableOpacity>

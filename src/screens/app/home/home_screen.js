@@ -1,6 +1,5 @@
 import React from "react";
 
-import * as Expo from "expo";
 import MapView from "react-native-maps";
 import Header from "../../../components/home_header_component/home_header";
 import Footer from "../../../components/footer_component/footer";
@@ -9,7 +8,6 @@ import { View, TouchableOpacity, Text, Image, Button } from "react-native";
 import styles from "./home_screen_styles";
 import routes from "../../../router/routes";
 import { unitHeight, unitWidth } from "../../../constants/dimensions";
-import { Ionicons , Entypo, Feather} from "@expo/vector-icons";
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -77,36 +75,36 @@ export default class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate(routes.profile())}
             style={styles.optionItem}
           >
-            <Ionicons style={styles.icon} name="ios-person" size={20} />
+            <Icon style={styles.icon} name="ios-person" size={20} />
             <Text style={styles.itemText}>Profile</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
           <TouchableOpacity style={styles.optionItem}>
-          <Ionicons style={styles.icon} name="ios-clock" size={20} color={'#D3D3D3'} />
+          <Icon style={styles.icon} name="ios-clock" size={20} color={'#D3D3D3'} />
             <Text style={styles.itemTextLocked}>History</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
 
           <TouchableOpacity style={styles.optionItem}>
-          <Ionicons style={styles.icon} name="ios-construct" size={20} color={'#D3D3D3'} />
+          <Icon style={styles.icon} name="ios-construct" size={20} color={'#D3D3D3'} />
             <Text style={styles.itemTextLocked}>Fix your bike</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
 
           <TouchableOpacity style={styles.optionItem}>
-          <Ionicons style={styles.icon} name="ios-bicycle" size={20} color={'#D3D3D3'} />
+          <Icon style={styles.icon} name="ios-bicycle" size={20} color={'#D3D3D3'} />
             <Text style={styles.itemTextLocked}>Rent a bike</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
 
           <TouchableOpacity style={styles.optionItem}>
-          <Ionicons style={styles.icon} name="ios-pricetags" size={20} color={'#D3D3D3'} />
+          <Icon style={styles.icon} name="ios-pricetags" size={20} color={'#D3D3D3'} />
             <Text style={styles.itemTextLocked}>Buy & Sell</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
 
           <TouchableOpacity style={styles.optionItem}>
-          <Ionicons style={styles.icon} name="ios-lock" size={20} color={'#D3D3D3'} />
+          <Icon style={styles.icon} name="ios-lock" size={20} color={'#D3D3D3'} />
             <Text style={styles.itemTextLocked}>Store your bike</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
@@ -116,7 +114,7 @@ export default class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate(routes.info())}
             style={styles.optionItem}
           >
-            <Ionicons style={styles.icon} name="ios-information-circle-outline" size={20} />
+            <Icon style={styles.icon} name="ios-information-circle-outline" size={20} />
             <Text style={styles.itemText}>Info</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
@@ -126,7 +124,7 @@ export default class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate(routes.signIn())}
             style={styles.optionItem}
           >
-            <Ionicons style={styles.icon} name="ios-log-out" size={20} />
+            <Icon style={styles.icon} name="ios-log-out" size={20} />
             <Text style={styles.itemText}>Sign Out</Text>
           </TouchableOpacity>
           <View style={styles.separatorView} />
@@ -166,7 +164,7 @@ export default class HomeScreen extends React.Component {
             style={styles.button}
             onPress={() => this._handleMapRegionChange(this.state.location)}
           >
-            <Ionicons name="md-locate" size={32} />
+            <Icon name="md-locate" size={32} />
           </TouchableOpacity>
         </MenuDrawer>
       </View>

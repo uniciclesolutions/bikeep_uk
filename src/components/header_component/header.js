@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Share } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Icon,View, Text, Image, TouchableOpacity, Share } from "react-native";
 import { unitHeight, unitWidth } from "../../constants/dimensions";
 import styles from "./header_styles";
 
@@ -12,14 +11,14 @@ const Header = props => {
         onPress={() => props.navigation.goBack()}
         style={styles.circularContainer}
       >
-        <Ionicons name="ios-arrow-round-back" size={32} />
+        <Icon name="ios-arrow-round-back" size={32} />
       </TouchableOpacity>
       <View style={styles.circularContainerRight}>
         <Text style={styles.text}>{props.title}</Text>
       </View>
 
       <TouchableOpacity style={styles.circularContainer}>
-        <Ionicons name="ios-arrow-round-back" size={32} color={"white"} />
+        <Icon name="ios-arrow-round-back" size={32} color={"white"} />
       </TouchableOpacity>
     </View>
   );

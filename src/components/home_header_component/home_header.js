@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Share } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { unitHeight, unitWidth } from "../../constants/dimensions";
 import styles from "./home_header_styles";
 
